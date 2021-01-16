@@ -1,0 +1,28 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "id": "urn:OCPP:1.6:2019:12:Payment",
+    "title": "PaymentRequest",
+    "type": "object",
+    "properties": {
+        "idTag": {
+            "type": "string",
+            "maxLength": 20
+        },
+        "meterStart": {
+            "type": "integer"
+        },
+        "meterStop": {
+            "type": "integer"
+        },
+        "tariff": {
+            "type": "integer"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "idTag",
+        "meterStart",
+        "meterStop",
+        "tariff"
+    ]
+}

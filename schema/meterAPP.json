@@ -1,0 +1,39 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "id": "urn:OCPP:1.6:2019:12:MeterValuesApp",
+    "title": "MeterValuesApp",
+    "type": "object",
+    "properties": {
+        "connectorId": {
+            "type": "integer"
+        },
+        "transactionId": {
+            "type": "integer"
+        },
+        "meterValue": {
+            "type": "object",
+            "properties": {
+                "KWH": {
+                    "type": "integer"
+                },
+                "SOC": {
+                    "type": "integer"
+                }
+                
+            },
+            "additionalProperties":false,
+                "required": [
+                    "KWH"
+                ]
+        },
+        "timestamp": {
+            "type": "integer"
+        }
+
+    },
+    "additionalProperties": false,
+    "required": [
+        "connectorId",
+        "meterValue"
+    ]
+}
