@@ -12,11 +12,14 @@ const ChargeRecordSchema = new Schema({
   //   ref: 'profile'
   // },
   phone:String,
-  carORmotor: {
+  rfidserial: {
+    type: String
+  },
+  vehicleType: {
     type: String,
     // required: true
   },
-  chargertype: {
+  connector/*chargertype*/: {
     type: String,
     // required: true
   },
@@ -25,12 +28,20 @@ const ChargeRecordSchema = new Schema({
     kwh:{type:Number}
   },
   currency:{type:Number},
+  currencyUsd: Number,
+  currencyUnit:{
+      type : String,
+      enum: ["IR", "Usd"]
+  },
   startTime: {
     type: Date,
     default: Date.now
   },
   stopTime: {
     type: Date
-  }
+  },
+  transactionId: String,
+  meterStart: String,
+  meterStop: String
 });
 module.exports = ChargeRecord = mongoose.model('chargerecord', ChargeRecordSchema);
